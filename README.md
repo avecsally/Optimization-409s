@@ -1,5 +1,5 @@
 # Optimization-409s
-### Game Schedule for U.S. National Football League¶
+### Game Schedule for U.S. National Football League
 Fall 2020 Optimization
 
 Jianing Zhang, Junyi Qian, Yue Zheng, Ziqiao Yan
@@ -18,3 +18,32 @@ Whereas the overall goal was to reduce the total distance that the teams travell
 
 Assignment
 In this workshop, you will build an integer programming model and use the results of the optimization to support your recommendations. Make a report of about 3 pages (excluding figures, graphs and appendices) summarizing your results, your interpretation of the results and your conclusions and recommendations. You can include graphs and outputs in an appendix, but make sure to summarize and interpret the results in your report as well.
+
+
+
+### The Plain Vanilla Schedule
+
+To start, develop a schedule that minimizes the total travel distance of all teams. The distances between the home stadiums of each team are shown in miles in the file “distance.cvs”. When calculating the distances that teams travel, you can assume that after each game the team that played away will travel back to their home stadium before the next game. Include in your model the four main rules.
+
+- What are the decision variables in this problem?
+The decision variable should be considered as a binary indication of weather home team $h$ would play against away team $a$ on week $w$. For example, if $x_{h,a,w}$ equals to 1, is means that the home team $h$ would play against with away team $a$ on week $w$. Otherwise, the game does not happen.
+
+- What is the objective function? What are the constraints?
+The objective function which minimizes the total travel distance of all teams should be the summed product of all the teams travel distances through out the 12 weeks. If we assume the travel distance from the origin to destination as $d_{h,a}$， the objective function should be defined as
+
+$min\sum_{h,a,w}x_{h,a,w}\cdot 2d_{h,a} $
+
+
+The constraints for the schedualing, as discussed in the problem statement as follows
+
+The season was limited to 12 weeks.
+Each team would play once per week.
+All 12 games that a team played would need to be against a different opponent.
+Each team would play at most six home games (i.e., on their home stadium).
+- Write down the mathematical formulation of the problem.
+$min\sum_{h,a,w}x_{h,a,w}\cdot 2d_{h,a} $
+
+subject to
+
+The season was limited to 12 weeks:
+$\sum_{h}\sum_{w}[x_{h,a,w}+x_{h,a,w}]=12$
