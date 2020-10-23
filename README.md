@@ -41,9 +41,9 @@ Each team would play once per week.
 All 12 games that a team played would need to be against a different opponent.
 Each team would play at most six home games (i.e., on their home stadium).
 - Write down the mathematical formulation of the problem.
-$min\sum_{h,a,w}x_{h,a,w}\cdot 2d_{h,a} $
+min\sum_{h,a,w}x_{h,a,w}\cdot 2d_{h,a} 
 
 subject to
 
 The season was limited to 12 weeks:
-$\sum_{h}\sum_{w}[x_{h,a,w}+x_{h,a,w}]=12$
+\sum_{h}\sum_{w}[x_{h,a,w}+x_{h,a,w}]=12
