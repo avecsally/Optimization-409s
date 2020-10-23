@@ -26,7 +26,7 @@ In this workshop, you will build an integer programming model and use the result
 To start, develop a schedule that minimizes the total travel distance of all teams. The distances between the home stadiums of each team are shown in miles in the file “distance.cvs”. When calculating the distances that teams travel, you can assume that after each game the team that played away will travel back to their home stadium before the next game. Include in your model the four main rules.
 
 - What are the decision variables in this problem?
-The decision variable should be considered as a binary indication of weather home team $h$ would play against away team $a$ on week $w$. For example, if $x_{h,a,w}$ equals to 1, is means that the home team $h$ would play against with away team $a$ on week $w$. Otherwise, the game does not happen.
+The decision variable should be considered as a binary indication of weather home team $h$ would play against away team $(a)$ on week $w$. For example, if $x_{h,a,w}$ equals to 1, is means that the home team $h$ would play against with away team $a$ on week $w$. Otherwise, the game does not happen.
 
 - What is the objective function? What are the constraints?
 The objective function which minimizes the total travel distance of all teams should be the summed product of all the teams travel distances through out the 12 weeks. If we assume the travel distance from the origin to destination as $d_{h,a}$， the objective function should be defined as
